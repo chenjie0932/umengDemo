@@ -1,0 +1,8 @@
+dependencies {
+    //友盟基础库依赖（必须）
+    api 'com.umeng.umsdk:common:9.4.4'
+    api 'com.umeng.umsdk:asms:1.4.1'
+    //友盟Push依赖
+    api 'com.umeng.umsdk:push:6.4.5'
+
+}

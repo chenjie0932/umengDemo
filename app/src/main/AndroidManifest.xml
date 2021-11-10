@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.umengdemo">
+    <!-- 相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 文件读取权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/scan_flashlight_off"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UmengDemo">
+        <activity
+            android:name=".scan.ScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.taobao.accs.ChannelService"
+            android:exported="false"
+            tools:replace="android:exported" />
+        <service
+            android:name="com.taobao.accs.data.MsgDistributeService"
+            android:exported="false"
+            tools:replace="android:exported" />
+
+        <receiver
+            android:name="com.taobao.accs.EventReceiver"
+            android:exported="false"
+            tools:replace="android:exported" />
+        <receiver
+            android:name="com.taobao.accs.ServiceReceiver"
+            android:exported="false"
+            tools:replace="android:exported" />
+
+        <service
+            android:name="org.android.agoo.accs.AgooService"
+            android:exported="false"
+            tools:replace="android:exported" />
+        <service
+            android:name="com.umeng.message.UmengIntentService"
+            android:exported="false"
+            tools:replace="android:exported" />
+        <service
+            android:name="com.umeng.message.XiaomiIntentService"
+            android:exported="false"
+            tools:replace="android:exported" />
+
+        <receiver
+            android:name="com.taobao.agoo.AgooCommondReceiver"
+            android:exported="false"
+            tools:replace="android:exported" />
+
+        <service
+            android:name="com.umeng.message.UmengMessageIntentReceiverService"
+            android:exported="false"
+            tools:replace="android:exported" />
+    </application>
+
+</manifest>
